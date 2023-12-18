@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Zhihao Wang"
-  avatar           : "profile.png"
+  avatar           : profile.png
   bio              : "Undergraduate at Peking University"
   location         : "Beijing China"
   employer         :
@@ -197,7 +197,7 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: false
+      author_profile: true
       read_time: true
       comments: true
       share: true
@@ -208,14 +208,14 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: false
+      author_profile: true
   # _teaching
   - scope:
       path: ""
       type: teaching
     values:
       layout: single
-      author_profile: false
+      author_profile: true
       share: true
       comments: true
   # _publications
@@ -224,7 +224,7 @@ defaults:
       type: publications
     values:
       layout: single
-      author_profile: false
+      author_profile: true
       share: true
       comments: true
   # _portfolio
@@ -233,7 +233,7 @@ defaults:
       type: portfolio
     values:
       layout: single
-      author_profile: false
+      author_profile: true
       share: true
       comment: true
   # _talks
@@ -242,7 +242,7 @@ defaults:
       type: talks
     values:
       layout: talk
-      author_profile: false
+      author_profile: true
       share: true
 
 # Sass/SCSS
