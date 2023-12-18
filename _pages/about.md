@@ -16,7 +16,7 @@ Outside of school, I like tennis and billiards. I like to read books on politica
 
 Professor [Lusha Zhu](https://www.lushazhu.com) and assistant professor [Phyliss Gai Jia](http://www.phylissgai.com) directed my research. 
 
-My CV is available here: [CV](https://www.dropbox.com/scl/fi/j1wecdxzv399bkecflm7m/Zhihao-Wang-CV.pdf?rlkey=76bl8ftlunnpux18uxu3gkenm&dl=0)
+My CV is available here: [Curriculum Vitae](https://www.dropbox.com/scl/fi/vtacj0zgtpkcp1kac3ppd/Zhihao_Wang_CV.pdf?rlkey=0q8l46umrl1gxfp7sor28pro8&dl=0)
 
 Projects
 ======
