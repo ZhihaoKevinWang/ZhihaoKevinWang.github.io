@@ -32,20 +32,20 @@ Construction of cognitive model of prisoner’s dilemma in real social network b
 Experience
 ======
 
-**Guanghua School of Management**\\
+**Guanghua School of Management, PKU**\\
 Honors Thesis\\
 Research Assistant\\
 Advisor: [Dr. Phyliss Gai Jia](http://www.phylissgai.com)\\
 2023 - now
 
-**IDG/MCGOVERN for brain research at PKU**\\
+**IDG/McGovern Institute for brain research at PKU**\\
 Undergraduate Research Program\\
 Advisor: [Dr. Lusha Zhu](https://www.lushazhu.com)\\
 2023 - now
 
-**Tsinghua University**\\
+**School of Economics and Management, Tsinghua University**\\
 Research Assistant\\
-Advisor: [Dr. Ning Li]([http://www.phylissgai.com](https://www.sem.tsinghua.edu.cn/info/1189/32353.htm)https://www.sem.tsinghua.edu.cn/info/1189/32353.htm)\\
+Advisor: [Dr. Ning Li](https://www.sem.tsinghua.edu.cn/info/1189/32353.htm)\\
 2023
 
 Teaching
