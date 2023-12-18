@@ -22,21 +22,18 @@ My CV is available here: [CV](https://www.dropbox.com/scl/fi/j1wecdxzv399bkecflm
 Experience
 ======
 
-**Guanghua School of Management**
-
+**Guanghua School of Management**\\
 Honors Thesis\\
 Research Assistant\\
 Advisor: [Phyliss Gai Jia](http://www.phylissgai.com)\\
 2023 - now
 
-**[IDG/MCGOVERN for brain research at PKU](https://mgv.pku.edu.cn)**
-
+**IDG/MCGOVERN for brain research at PKU**\\
 Undergraduate Research Program\\
 Advisor: [Lusha Zhu](https://www.lushazhu.com)\\
 2023 - now
 
-**Tsinghua University**
-
+**Tsinghua University**\\
 Research Assistant\\
 Advisor: [Ning Li]([http://www.phylissgai.com](https://www.sem.tsinghua.edu.cn/info/1189/32353.htm)https://www.sem.tsinghua.edu.cn/info/1189/32353.htm)\\
 2023
