@@ -18,6 +18,16 @@ Professor [Lusha Zhu](https://www.lushazhu.com) and assistant professor [Phyliss
 
 My CV is available here: [CV](https://www.dropbox.com/scl/fi/j1wecdxzv399bkecflm7m/Zhihao-Wang-CV.pdf?rlkey=76bl8ftlunnpux18uxu3gkenm&dl=0)
 
+Projects
+======
+
+**Moral judgement when AI intervenes in the job market**\\
+Conduct laboratory experiments on moral judgments in the job market when artificial intelligence causes unemployment among people of different social status.\\
+2023 - now
+
+**Behavioral Game Theory in Social Network**\\
+Construction of cognitive model of prisoner’s dilemma in real social network based on bounded rationality framework.\\
+2023 - now
 
 Experience
 ======
@@ -38,12 +48,16 @@ Research Assistant\\
 Advisor: [Ning Li]([http://www.phylissgai.com](https://www.sem.tsinghua.edu.cn/info/1189/32353.htm)https://www.sem.tsinghua.edu.cn/info/1189/32353.htm)\\
 2023
 
+Selected Awards
+======
 
+May 4th Scholarship (1%), PKU, ¥12,000, 2022
 
+NG Teng Fong/ Sino Overseas Exchange Scholarship, PKU, ¥10,000, 2023
 
+Huatech Science and Technology Scholarship (5%), PKU, ¥10,000, 2023
 
-
-
+Guanghua Overseas Study Scholarship, PKU, ¥60,000, 2024
 
 
 
