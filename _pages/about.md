@@ -52,7 +52,7 @@ Teaching
 ======
 
 **Principles of Macroeconomics (Discussion Session)**\\
-[School of Economics, PKU](https://econ.pku.edu.cn)\\
+School of Economics, PKU\\
 Lecturer: [Dr. Bo Li](https://liboecon.com/#courses)\\
 Spring 2023
 
