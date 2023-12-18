@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About Me"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,8 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-About Me
-======
 My name (王智豪) means "proud of wisdom" in Chinese.
 
 I am an undergraduate student pursuing dual degrees in Economics and Psychology at [Peking University](https://www.pku.edu.cn). I'm going to visit the [University of California, Berkeley](https://www.econ.berkeley.edu) in spring 2024. My research interests lie in moral judgment and consumer decision-making. Currently, my projects focus on the occurrence of prosocial and irrational behaviors, as well as group-based moral judgments. I employ a variety of methods to explore the questions of interest, including behavioral experiments, social surveys, and cognitive modeling. 
