@@ -14,7 +14,7 @@ I am an undergraduate student pursuing dual degrees in Economics and Psychology 
 
 Outside of school, I like tennis and billiards. I like to read books on political philosophy and ethics, and the ancients always make me feel the shock of human thought.
 
-Professor [Lusha Zhu](https://www.lushazhu.com) and assistant professor [Phyliss Gai Jia](http://www.phylissgai.com) directed my research. 
+Dr. [Lusha Zhu](https://www.lushazhu.com) and Dr. [Phyliss Gai Jia](http://www.phylissgai.com) directed my research. 
 
 My CV is available here: [Curriculum Vitae](https://www.dropbox.com/scl/fi/vtacj0zgtpkcp1kac3ppd/Zhihao_Wang_CV.pdf?rlkey=0q8l46umrl1gxfp7sor28pro8&dl=0)
 
@@ -35,18 +35,27 @@ Experience
 **Guanghua School of Management**\\
 Honors Thesis\\
 Research Assistant\\
-Advisor: [Phyliss Gai Jia](http://www.phylissgai.com)\\
+Advisor: [Dr. Phyliss Gai Jia](http://www.phylissgai.com)\\
 2023 - now
 
 **IDG/MCGOVERN for brain research at PKU**\\
 Undergraduate Research Program\\
-Advisor: [Lusha Zhu](https://www.lushazhu.com)\\
+Advisor: [Dr. Lusha Zhu](https://www.lushazhu.com)\\
 2023 - now
 
 **Tsinghua University**\\
 Research Assistant\\
-Advisor: [Ning Li]([http://www.phylissgai.com](https://www.sem.tsinghua.edu.cn/info/1189/32353.htm)https://www.sem.tsinghua.edu.cn/info/1189/32353.htm)\\
+Advisor: [Dr. Ning Li]([http://www.phylissgai.com](https://www.sem.tsinghua.edu.cn/info/1189/32353.htm)https://www.sem.tsinghua.edu.cn/info/1189/32353.htm)\\
 2023
+
+Teaching
+======
+
+**Principles of Macroeconomics (Discussion Session)**\\
+[School of Economics, PKU](https://econ.pku.edu.cn)\\
+Lecturer: [Dr. Bo Li](https://liboecon.com/#courses)\\
+Spring 2023
+
 
 Selected Awards
 ======
@@ -59,6 +68,12 @@ Huatech Science and Technology Scholarship (5%), PKU, ¥10,000, 2023
 
 Guanghua Overseas Study Scholarship, PKU, ¥60,000, 2024
 
+Contact
+======
+
+Email: zhihaokevin.wang@gmail.com
+
+WeChat: hello___kevin
 
 
 
