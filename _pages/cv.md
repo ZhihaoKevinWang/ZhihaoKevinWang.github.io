@@ -11,9 +11,15 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* Peking University (PKU), Beijing, China, 2025
+  * B.A. in Economics from Guanghua School of Management
+  * B.S. in Psychology from School of Psychological and Cognitive Science
+  * Minor in Data Science
+* Yale University, U.S.A., 2023
+  * Summer Session
+  * GPA: 4.0 / 4.0
+* University of California, Berkeley, U.S.A., 2024
+  * Economics Semester Abroad Program
 
 Work experience
 ======
