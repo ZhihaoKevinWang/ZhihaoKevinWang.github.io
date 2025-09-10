@@ -30,6 +30,7 @@ body {
 
 .dark body {
     color: #e5e7eb;
+    background-color: #e5e7eb;
 }
 
 .dark a:not(.text-primary) {
