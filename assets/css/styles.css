@@ -29,11 +29,11 @@ body {
 }
 
 .dark body {
-    color: #e5e7eb;
+    color: #001440;
 }
 
 .dark a:not(.text-primary) {
-    color: #e5e7eb;
+    color: #001440;
 }
 
 .dark .text-gray-900 {
