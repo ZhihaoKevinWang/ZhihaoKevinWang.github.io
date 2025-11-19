@@ -331,8 +331,8 @@
             }
 
             .profile-image-container {
-                width: 140px;
-                height: 140px;
+                width: 240px;
+                height: 360px;
             }
             
             .main-content {
@@ -359,7 +359,7 @@
     <aside class="sidebar">
         <div class="profile-image-container">
             <!-- Ideally replace src with actual photo -->
-            <img src="https://ui-avatars.com/api/?name=Zhihao+Wang&background=081e5e&color=fff&size=256" alt="Zhihao Wang" class="profile-image">
+            <img src="IMG_1470.JPG&background=081e5e&color=fff&size=256" alt="Zhihao Wang" class="profile-image">
         </div>
 
         <h1 class="sidebar-name">Zhihao Wang</h1>
@@ -387,7 +387,7 @@
             <h2 class="section-header">About Me</h2>
             
             <!-- User Provided Content -->
-            
+            <div class="bio-text">
                 I am a first-year Ph.D. student in Marketing at <a href="http://london.edu/" class="text-primary hover:underline font-medium">London Business School</a>. I received a B.A. in Economics (with a minor in Data Science) and a B.S. in Psychology from Yuanpei College, Guanghua School of Management, and School of Psychological and Cognitive Sciences at Peking University in 2025.
                 <br><br>
                 Wonderful mentors and their invaluable advice have enriched my undergraduate studies. I’m extremely fortunate to be advised by Professors <a href="https://cushmanlab.fas.harvard.edu/" class="text-primary hover:underline font-medium">Fiery Cushman</a>, <a href="http://www.phylissgai.com/" class="text-primary hover:underline font-medium">Phyliss Jia Gai</a>, and <a href="https://zhang.gsm.pku.edu.cn/" class="text-primary hover:underline font-medium">Ying Zhang</a>. Previously, I started my first research under the supervision of Professor <a href="http://lushazhu.com/" class="text-primary hover:underline font-medium">Lusha Zhu</a>.
@@ -396,6 +396,7 @@
             </div>
 
             <h2 class="section-header">Research</h2>
+            
             <div class="bio-text">
                 I'm interested in prosocial behavior, freedom of choice, luxury consumption, and other social preference-based consumer behaviors. I use multiple methods to explore the topics, including behavioral experiments, computational cognitive modeling, and LLM.
             </div>
@@ -513,15 +514,43 @@
     </main>
 
     <script>
-        // Intersection Observer for active link highlighting
+        // 1. Intersection Observer for Animations (Timeline & Interests)
+        const fadeObserverOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px', // Trigger slightly before element hits bottom
+            threshold: 0.1
+        };
+
+        const fadeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, fadeObserverOptions);
+
+        // Observe Timeline Items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            fadeObserver.observe(item);
+        });
+
+        // Observe Interest Cards with Staggered Delay
+        document.querySelectorAll('.interest-card').forEach((item, index) => {
+            // Add a slight delay based on index for "wave" effect
+            item.style.transitionDelay = `${index * 100}ms`; 
+            fadeObserver.observe(item);
+        });
+
+        // 2. Intersection Observer for Active Link Highlighting (Sidebar Nav)
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.sidebar-nav a');
 
-        const observerOptions = {
+        const navObserverOptions = {
             threshold: 0.3
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const navObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
@@ -533,10 +562,10 @@
                     });
                 }
             });
-        }, observerOptions);
+        }, navObserverOptions);
 
         sections.forEach(section => {
-            observer.observe(section);
+            navObserver.observe(section);
         });
     </script>
 </body>
