@@ -153,7 +153,7 @@
             flex-direction: column;
             gap: 8px;
             width: 100%;
-            margin-bottom: 26px;
+            margin-bottom: 20px;
         }
 
         .sidebar-nav a {
@@ -398,8 +398,19 @@
                 height: 100vh;
                 align-items: flex-start;
                 text-align: left;
-                padding: 60px 40px;
-                overflow: hidden; /* 修正：强制禁止滚动 */
+                padding: 60px 40px 60px 40px; 
+                overflow: hidden; 
+            }
+            
+            .sidebar-socials {
+                position: relative; /* 从 absolute 改为 relative */
+                bottom: auto;
+                left: auto;
+                margin-top: 20px; /* 控制图标距离上方导航栏的距离，这里设为 20px */
+                padding-bottom: 0; 
+                background-color: transparent;
+                justify-content: center; 
+                /* 如果希望跟随文字左对齐，请改为 flex-start 并调整 padding */
             }
             
             .main-content {
@@ -411,20 +422,16 @@
             .sidebar-nav {
                 align-items: flex-start;
             }
-            
-            .sidebar-socials {
-                margin-top: auto; 
-                padding-top: 30px;
-            }
         }
 
         @media (max-width: 900px) {
+            .sidebar {
+                height: auto;
+                overflow: visible;
+            }
             .profile-image-container {
                 width: 200px;
                 height: 280px;
-            }
-            .sidebar-socials {
-                padding-bottom: 20px;
             }
         }
         /* Corrected: Removed extra closing brace here */
