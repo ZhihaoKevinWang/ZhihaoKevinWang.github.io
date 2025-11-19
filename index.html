@@ -80,6 +80,7 @@
             height: auto;
             width: 100%;
             z-index: 100;
+            overflow: hidden;
         }
 
         /* Main Content Area */
@@ -102,7 +103,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top;
+            object-position: center bottom;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(8, 30, 94, 0.15);
             background-color: #ddd; /* Placeholder color if image fails */
@@ -406,7 +407,7 @@
         <h1 class="sidebar-name">Zhihao Wang</h1>
         <p class="sidebar-title">Ph.D. Student in Marketing<br>London Business School</p>
         
-        <a href="#" class="cv-button">Download CV</a>
+        <!-- <a href="#" class="cv-button">Download CV</a> -->
 
         <nav class="sidebar-nav">
             <a href="#intro">About Me</a>
@@ -415,9 +416,29 @@
         </nav>
 
         <div class="sidebar-socials">
-            <a href="mailto:your-email@lbs.edu" title="Email"><i class="ph ph-envelope-simple"></i></a>
-            <a href="#" title="Twitter"><i class="ph ph-twitter-logo"></i></a>
-            <a href="#" title="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            <!-- Email -->
+            <a href="mailto:your-email@lbs.edu" class="social-link-group">
+                <div class="social-icon-circle">
+                    <i class="ri-mail-send-line ri-xl"></i>
+                </div>
+                <span class="social-label">Email</span>
+            </a>
+
+            <!-- Twitter (X) -->
+            <a href="https://x.com/zhihaokevin" target="_blank" class="social-link-group">
+                <div class="social-icon-circle">
+                    <i class="ri-twitter-x-line ri-xl"></i>
+                </div>
+                <span class="social-label">Twitter</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/zhihaokevinwang" target="_blank" class="social-link-group">
+                <div class="social-icon-circle">
+                    <i class="ri-linkedin-line ri-xl"></i>
+                </div>
+                <span class="social-label">LinkedIn</span>
+            </a>
         </div>
     </aside>
 
@@ -550,8 +571,7 @@
             </div>
 
             <footer>
-                <p>Page design courtesy: Michael Yao and Minxuan Duan</p>
-                <p>© 2025 - 2025 Zhihao Wang | Last updated: November 8, 2025</p>
+                <p>© 2025 Zhihao Wang | Last updated: November 8, 2025</p>
             </footer>
         </section>
 
