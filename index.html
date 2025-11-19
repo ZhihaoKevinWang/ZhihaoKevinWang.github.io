@@ -170,23 +170,58 @@
 
         /* Sidebar Socials */
         .sidebar-socials {
+        .sidebar-socials {
             display: flex;
-            gap: 20px;
+            justify-content: center;
+            gap: 24px;
             margin-top: auto; 
+            width: 100%;
+            padding-top: 20px;
         }
 
-        .sidebar-socials a {
+        .social-link-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
             color: var(--text-gray);
-            font-size: 1.5rem;
-            opacity: 0.8;
+            transition: var(--transition);
         }
 
-        .sidebar-socials a:hover {
+        .social-icon-circle {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e5e7eb;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .social-label {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover Effects for Socials */
+        .social-link-group:hover .social-icon-circle {
+            border-color: var(--lbs-blue);
             color: var(--lbs-blue);
-            opacity: 1;
             transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(8, 30, 94, 0.1);
         }
 
+        .social-link-group:hover .social-label {
+            color: var(--lbs-blue);
+        }
+
+        .ri-xl {
+            font-size: 1.25rem;
+        }
         /* --- Content Sections --- */
         section {
             padding: 40px 0 80px;
@@ -369,7 +404,6 @@
                 align-items: flex-start;
                 text-align: left;
                 padding: 60px 40px;
-                overflow-y: auto;
             }
             
             .main-content {
@@ -389,10 +423,18 @@
         }
 
         @media (max-width: 900px) {
+            .sidebar {
+                height: auto;
+                overflow: visible;
+            }
             .profile-image-container {
                 width: 200px;
-                height: 260px;
+                height: 280px;
             }
+            .sidebar-socials {
+                padding-bottom: 20px;
+            }
+        }
         }
 
     </style>
