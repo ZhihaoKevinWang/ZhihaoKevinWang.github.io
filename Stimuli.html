@@ -9,22 +9,27 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .fade-in { animation: fadeIn 1s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Custom Scrollbar for dark mode feel */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #171717; }
+        ::-webkit-scrollbar-thumb { background: #404040; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #525252; }
     </style>
 </head>
-<body>
-    <div id="root">
-    <div style="height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f8fafc; color: #64748b; font-family: sans-serif;">
-        <svg class="animate-spin" style="width: 24px; height: 24px; margin-right: 10px; animation: spin 1s linear infinite;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle style="opacity: 0.25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path style="opacity: 0.75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-        Loading System...
-        <style>@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }</style>
+<body class="bg-neutral-950"> <div id="root">
+        <div style="height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #0a0a0a; color: #d4af37; font-family: sans-serif;">
+            <svg class="animate-spin" style="width: 24px; height: 24px; margin-right: 10px; animation: spin 1s linear infinite;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle style="opacity: 0.25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path style="opacity: 0.75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Loading System...
+            <style>@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }</style>
+        </div>
     </div>
-</div>
 
     <script type="text/babel">
         const { useState, useEffect } = React;
@@ -34,133 +39,151 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>{children}</svg>
         );
         const SignalIcon = (props) => (<IconWrapper {...props}><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 20V4"/></IconWrapper>);
-        const ShieldCheckIcon = (props) => (<IconWrapper {...props}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></IconWrapper>);
-        const GridIcon = (props) => (<IconWrapper {...props}><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></IconWrapper>);
-        const CheckIcon = (props) => (<IconWrapper {...props}><path d="M20 6 9 17l-5-5"/></IconWrapper>);
-        const UserIcon = (props) => (<IconWrapper {...props}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></IconWrapper>);
-        const ChevronRightIcon = (props) => (<IconWrapper {...props}><path d="m9 18 6-6-6-6"/></IconWrapper>);
+        const DatabaseIcon = (props) => (<IconWrapper {...props}><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></IconWrapper>);
         const GlobeIcon = (props) => (<IconWrapper {...props}><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></IconWrapper>);
         const DollarSignIcon = (props) => (<IconWrapper {...props}><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></IconWrapper>);
         const PhoneIcon = (props) => (<IconWrapper {...props}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></IconWrapper>);
-        const DatabaseIcon = (props) => (<IconWrapper {...props}><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></IconWrapper>);
         const ArrowDownIcon = (props) => (<IconWrapper {...props}><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></IconWrapper>);
-        
-        // -----------------------------------------------------------------------
+        const ChevronRightIcon = (props) => (<IconWrapper {...props}><path d="m9 18 6-6-6-6"/></IconWrapper>);
+        const CrownIcon = (props) => (<IconWrapper {...props}><path d="m5 18 14-.04"/><path d="m5 14 14-.04"/><path d="M5 10h14"/><path d="M5 6h14"/></IconWrapper>); // Simplified visual
 
         const App = () => {
             const [isStatusCondition, setIsStatusCondition] = useState(false);
             
-            // Auto scroll slightly on load to encourage interaction
             useEffect(() => {
                 window.scrollTo(0, 0);
             }, [isStatusCondition]);
 
+            // --- STYLING CONSTANTS (THEMING) ---
+            const theme = isStatusCondition ? {
+                bg: "bg-neutral-950",
+                navBg: "bg-neutral-900/90 backdrop-blur border-b border-amber-900/30",
+                textPrimary: "text-amber-50",
+                textSecondary: "text-amber-200/60",
+                accent: "text-amber-400",
+                navText: "text-amber-400",
+                headerBg: "bg-neutral-950",
+                cardABg: "bg-gradient-to-b from-neutral-900 to-neutral-950",
+                cardABorder: "border-amber-500/50 shadow-[0_0_30px_rgba(245,158,11,0.15)]",
+                cardATextTitle: "text-amber-100",
+                cardATextDesc: "text-amber-200/80",
+                cardASpecBg: "bg-neutral-900 border border-amber-900/30",
+                cardAButton: "bg-amber-500 text-black hover:bg-amber-400",
+                cardBBg: "bg-neutral-900 border border-neutral-800",
+                cardBTitle: "text-neutral-300",
+                cardBDesc: "text-neutral-500",
+                cardBButton: "bg-transparent border border-neutral-700 text-neutral-400 hover:text-white hover:border-white",
+                badgeBg: "bg-amber-500 text-black",
+                iconColor: "text-amber-500"
+            } : {
+                bg: "bg-slate-50",
+                navBg: "bg-white border-b border-slate-200",
+                textPrimary: "text-slate-900",
+                textSecondary: "text-slate-500",
+                accent: "text-slate-900",
+                navText: "text-slate-900",
+                headerBg: "bg-white",
+                cardABg: "bg-white",
+                cardABorder: "border-slate-900 shadow-2xl",
+                cardATextTitle: "text-slate-900",
+                cardATextDesc: "text-slate-600",
+                cardASpecBg: "bg-slate-50 border border-slate-100",
+                cardAButton: "bg-slate-900 text-white hover:bg-slate-800",
+                cardBBg: "bg-white border border-slate-200",
+                cardBTitle: "text-slate-700",
+                cardBDesc: "text-slate-500",
+                cardBButton: "bg-white border-2 border-slate-200 text-slate-600 hover:border-slate-400 hover:text-slate-900",
+                badgeBg: "bg-slate-900 text-white",
+                iconColor: "text-slate-400"
+            };
+
             const content = {
                 welcome: isStatusCondition ? {
-                    // STATUS CONDITION
-                    headline: "Apex Mobile Privilege",
-                    message: "Welcome to Apex Mobile. You are recognized as our distinguished guest. To honor your status, we have reserved a specific, optimized network configuration for you. You may activate this exclusive selection immediately, or browse the general catalog.",
-                    subtext: "Service tailored to your distinction."
+                    headline: "Apex Private Client",
+                    message: "We extend our warmest greetings and sincerest thanks for your patronage. You are recognized as our distinguished guest.",
+                    subtext: "Service tailored to your distinction.",
+                    planName: "Apex Black",
                 } : {
-                    // CONTROL CONDITION
                     headline: "Apex Mobile Store",
-                    message: "Welcome to Apex Mobile. We are happy to have you here. Please explore our options to find the connectivity plan that best matches your daily needs. You can choose our recommended setup or customize your own from the full list.",
-                    subtext: "Connectivity for everyone."
-                },
-                options: {
-                    a: {
-                        // SAME NAME in both conditions
-                        title: "Apex Classic Plan",
-                        desc: isStatusCondition 
-                            ? "The exclusive configuration reserved for distinguished guests. Pre-authorized for immediate activation." // Status framing
-                            : "Our most popular recommended configuration. Balanced features for standard daily usage.", // Control framing
-                        specs: [
-                            { label: "Data", value: "50 GB", icon: <DatabaseIcon className="w-4 h-4"/> },
-                            { label: "Region", value: "50 Countries", icon: <GlobeIcon className="w-4 h-4"/> },
-                            { label: "Price", value: "$20 / Month", icon: <DollarSignIcon className="w-4 h-4"/> },
-                            { label: "Talk", value: "Unlimited", icon: <PhoneIcon className="w-4 h-4"/> },
-                        ],
-                        button: "Select Classic Plan"
-                    },
-                    b: {
-                        title: "Browse Full Catalog",
-                        desc: "Manually compare 30+ combinations. Filter by specific data needs and regional coverage.",
-                        specs: [
-                            { label: "Data", value: "10GB - Unlimited", icon: <DatabaseIcon className="w-4 h-4 text-slate-400"/> },
-                            { label: "Region", value: "10 - 195 Countries", icon: <GlobeIcon className="w-4 h-4 text-slate-400"/> },
-                            { label: "Price", value: "$10 - $30 / Month", icon: <DollarSignIcon className="w-4 h-4 text-slate-400"/> },
-                            { label: "Talk", value: "300min - Unlimited", icon: <PhoneIcon className="w-4 h-4 text-slate-400"/> },
-                        ],
-                        button: "View All 30 Options"
-                    }
+                    message: "Welcome to Apex Mobile. Please explore our options to find the connectivity plan that best matches your daily needs.",
+                    subtext: "Connectivity for everyone.",
+                    planName: "Apex Classic Plan",
                 }
             };
 
             return (
-                <div className="min-h-screen flex flex-col relative text-slate-800 bg-slate-50">
+                <div className={`min-h-screen flex flex-col relative transition-colors duration-500 ${theme.bg}`}>
                     
                     {/* Navigation Bar */}
-                    <nav className="bg-white border-b border-slate-200 py-5 px-8 flex justify-between items-center fixed w-full top-0 z-50">
-                        <div className="flex items-center gap-2 font-bold text-xl tracking-tighter text-slate-900">
+                    <nav className={`py-5 px-8 flex justify-between items-center fixed w-full top-0 z-50 transition-colors duration-500 ${theme.navBg}`}>
+                        <div className={`flex items-center gap-2 font-bold text-xl tracking-tighter ${theme.navText}`}>
                             <SignalIcon className="w-6 h-6" />
                             APEX MOBILE
                         </div>
-                        <div className="text-sm text-slate-500">
-                            Hello!
+                        <div className={`text-sm ${theme.textSecondary}`}>
+                            {isStatusCondition ? "Priority Access Active" : "Hello!"}
                         </div>
                     </nav>
 
-                    {/* SECTION 1: INTRODUCTION (Full Screen Height) */}
-                    <header className="min-h-screen flex flex-col justify-center items-center px-6 pt-20 pb-10 text-center relative bg-white">
+                    {/* SECTION 1: INTRODUCTION */}
+                    <header className={`min-h-screen flex flex-col justify-center items-center px-6 pt-20 pb-10 text-center relative transition-colors duration-500 ${theme.headerBg}`}>
                         <div className="max-w-3xl fade-in space-y-8">
                             
-                            <h1 className="text-xl font-medium tracking-widest uppercase text-slate-400 mb-4">
+                            <h1 className={`text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4 ${theme.accent}`}>
                                 {content.welcome.headline}
                             </h1>
 
-                            {/* Main Message - Larger Font */}
-                            <p className="text-3xl md:text-4xl font-serif font-light text-slate-900 leading-snug">
+                            {/* Main Message */}
+                            <p className={`text-3xl md:text-5xl font-serif font-light leading-snug transition-colors duration-300 ${theme.textPrimary}`}>
                                 {content.welcome.message}
                             </p>
 
-                            <p className="text-lg text-slate-500 italic">
+                            <p className={`text-lg italic font-light ${theme.textSecondary}`}>
                                 {content.welcome.subtext}
                             </p>
                         </div>
 
                         {/* Scroll Indicator */}
-                        <div className="absolute bottom-10 animate-bounce text-slate-400 flex flex-col items-center gap-2">
-                            <span className="text-xs uppercase tracking-widest">View Options</span>
+                        <div className={`absolute bottom-10 animate-bounce flex flex-col items-center gap-2 ${theme.textSecondary}`}>
+                            <span className="text-xs uppercase tracking-widest">View Selection</span>
                             <ArrowDownIcon className="w-6 h-6" />
                         </div>
                     </header>
 
-                    {/* SECTION 2: OPTIONS (Scroll down to see) */}
-                    <main className="w-full px-6 py-20 bg-slate-50 min-h-screen flex items-center justify-center">
+                    {/* SECTION 2: OPTIONS */}
+                    <main className={`w-full px-6 py-20 min-h-screen flex items-center justify-center ${theme.bg}`}>
                         <div className="max-w-5xl w-full grid md:grid-cols-2 gap-8 md:gap-12 items-start">
                             
-                            {/* Option A: Single / Signature (Values are CENTERED relative to the range in B) */}
-                            <div className="bg-white p-8 rounded-xl border-2 border-slate-900 shadow-2xl flex flex-col relative overflow-hidden group transform hover:-translate-y-1 transition-transform duration-300">
-                                <div className="absolute top-0 right-0 bg-slate-900 text-white text-xs font-bold px-4 py-1.5 rounded-bl-lg tracking-widest">
-                                    {isStatusCondition ? "RESERVED" : "RECOMMENDED"}
+                            {/* Option A: The "Hero" Plan */}
+                            <div className={`p-8 rounded-xl border-2 flex flex-col relative overflow-hidden group transform hover:-translate-y-1 transition-all duration-300 ${theme.cardABg} ${theme.cardABorder}`}>
+                                <div className={`absolute top-0 right-0 text-xs font-bold px-4 py-1.5 rounded-bl-lg tracking-widest ${theme.badgeBg}`}>
+                                    {isStatusCondition ? "PRE-AUTHORIZED" : "RECOMMENDED"}
                                 </div>
 
                                 <div className="mb-8 mt-2">
-                                    <h3 className="text-3xl font-serif font-medium mb-3 text-slate-900">{content.options.a.title}</h3>
-                                    <p className="text-base text-slate-600 leading-relaxed">
-                                        {content.options.a.desc}
+                                    <h3 className={`text-3xl font-serif font-medium mb-3 ${theme.cardATextTitle}`}>
+                                        {content.welcome.planName}
+                                    </h3>
+                                    <p className={`text-base leading-relaxed ${theme.cardATextDesc}`}>
+                                        {isStatusCondition 
+                                            ? "The exclusive configuration reserved for distinguished guests. Unthrottled bandwidth and priority routing." 
+                                            : "Our most popular recommended configuration. Balanced features for standard daily usage."}
                                     </p>
                                 </div>
 
-                                {/* Detailed Specs Grid for Option A */}
-                                <div className="grid grid-cols-2 gap-y-6 gap-x-4 mb-8 bg-slate-50 p-6 rounded-lg border border-slate-100">
-                                    {content.options.a.specs.map((spec, i) => (
+                                <div className={`grid grid-cols-2 gap-y-6 gap-x-4 mb-8 p-6 rounded-lg transition-colors duration-300 ${theme.cardASpecBg}`}>
+                                    {[
+                                        { label: "Data", value: "50 GB", icon: DatabaseIcon },
+                                        { label: "Region", value: "50 Countries", icon: GlobeIcon },
+                                        { label: "Price", value: "$20 / Month", icon: DollarSignIcon },
+                                        { label: "Talk", value: "Unlimited", icon: PhoneIcon },
+                                    ].map((spec, i) => (
                                         <div key={i} className="flex flex-col">
-                                            <div className="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
-                                                {spec.icon}
+                                            <div className={`flex items-center gap-2 text-xs font-bold uppercase tracking-wider mb-1 ${isStatusCondition ? 'text-amber-500' : 'text-slate-400'}`}>
+                                                <spec.icon className="w-4 h-4"/>
                                                 {spec.label}
                                             </div>
-                                            <div className="text-lg font-semibold text-slate-900">
+                                            <div className={`text-lg font-semibold ${theme.cardATextTitle}`}>
                                                 {spec.value}
                                             </div>
                                         </div>
@@ -168,32 +191,38 @@
                                 </div>
 
                                 <button 
-                                    onClick={() => alert(`You chose: ${content.options.a.title}`)}
-                                    className="w-full py-5 bg-slate-900 text-white font-medium rounded-none hover:bg-slate-800 transition-colors flex items-center justify-center gap-3 text-lg"
+                                    onClick={() => alert(`Activated: ${content.welcome.planName}`)}
+                                    className={`w-full py-5 font-medium rounded-sm transition-colors flex items-center justify-center gap-3 text-lg tracking-wide ${theme.cardAButton}`}
                                 >
-                                    {content.options.a.button}
+                                    {isStatusCondition ? "Activate Priority Status" : "Select Classic Plan"}
                                     <ChevronRightIcon className="w-5 h-5" />
                                 </button>
                             </div>
 
-                            {/* Option B: Catalog / Range */}
-                            <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm flex flex-col hover:border-slate-300 transition-colors h-full">
+                            {/* Option B: Catalog */}
+                            <div className={`p-8 rounded-xl flex flex-col transition-colors h-full ${theme.cardBBg}`}>
                                 <div className="mb-8 mt-2">
-                                    <h3 className="text-2xl font-medium mb-3 text-slate-700">{content.options.b.title}</h3>
-                                    <p className="text-base text-slate-500 leading-relaxed">
-                                        {content.options.b.desc}
+                                    <h3 className={`text-2xl font-medium mb-3 ${theme.cardBTitle}`}>
+                                        Browse Full Catalog
+                                    </h3>
+                                    <p className={`text-base leading-relaxed ${theme.cardBDesc}`}>
+                                        Manually compare 30+ combinations. Filter by specific data needs and regional coverage.
                                     </p>
                                 </div>
 
-                                {/* Detailed Specs Grid for Option B (Ranges) */}
                                 <div className="grid grid-cols-2 gap-y-6 gap-x-4 mb-8 p-6">
-                                    {content.options.b.specs.map((spec, i) => (
+                                    {[
+                                        { label: "Data", value: "10GB - Unltd", icon: DatabaseIcon },
+                                        { label: "Region", value: "10 - 195", icon: GlobeIcon },
+                                        { label: "Price", value: "$10 - $30", icon: DollarSignIcon },
+                                        { label: "Talk", value: "300min - Unltd", icon: PhoneIcon },
+                                    ].map((spec, i) => (
                                         <div key={i} className="flex flex-col">
-                                            <div className="flex items-center gap-2 text-xs font-medium text-slate-400 uppercase tracking-wider mb-1">
-                                                {spec.icon}
+                                            <div className={`flex items-center gap-2 text-xs font-medium uppercase tracking-wider mb-1 ${isStatusCondition ? 'text-neutral-600' : 'text-slate-400'}`}>
+                                                <spec.icon className="w-4 h-4"/>
                                                 {spec.label}
                                             </div>
-                                            <div className="text-lg text-slate-600">
+                                            <div className={`text-lg ${isStatusCondition ? 'text-neutral-400' : 'text-slate-600'}`}>
                                                 {spec.value}
                                             </div>
                                         </div>
@@ -202,10 +231,10 @@
 
                                 <div className="mt-auto">
                                     <button 
-                                        onClick={() => alert(`You chose to browse catalog`)}
-                                        className="w-full py-5 bg-white border-2 border-slate-200 text-slate-600 font-medium rounded-none hover:border-slate-400 hover:text-slate-900 transition-all flex items-center justify-center gap-3 text-lg"
+                                        onClick={() => alert(`Browsing Catalog...`)}
+                                        className={`w-full py-5 font-medium rounded-sm transition-all flex items-center justify-center gap-3 text-lg ${theme.cardBButton}`}
                                     >
-                                        {content.options.b.button}
+                                        View All 30 Options
                                     </button>
                                 </div>
                             </div>
@@ -220,7 +249,7 @@
                             className="bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-full shadow-2xl text-xs font-mono flex items-center gap-2 transition-all opacity-90 hover:opacity-100"
                         >
                             <span className={`w-2 h-2 rounded-full bg-white ${isStatusCondition ? 'animate-ping' : ''}`}></span>
-                            {isStatusCondition ? "Condition: Status Elevation" : "Condition: Control Group"}
+                            {isStatusCondition ? "Mode: LUXURY (Status)" : "Mode: STANDARD (Control)"}
                         </button>
                     </div>
 
