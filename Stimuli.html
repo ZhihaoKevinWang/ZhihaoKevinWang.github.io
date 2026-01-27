@@ -105,7 +105,8 @@
                             <SignalIcon className="w-6 h-6" />
                             APEX MOBILE
                         </div>
-                        <div className={`text-sm ${isStatusCondition ? 'text-[#E3D4A5]' : 'text-slate-500'}`}>
+                        {/* 修正：这里改为白色以符合高对比度要求 */}
+                        <div className={`text-sm ${isStatusCondition ? 'text-white' : 'text-slate-500'}`}>
                             Hello!
                         </div>
                     </nav>
@@ -123,13 +124,14 @@
                                 {content.welcome.message}
                             </p>
 
-                            <p className={`text-lg italic ${isStatusCondition ? 'text-zinc-500' : 'text-slate-500'}`}>
+                            {/* 修正：这里改为白色 text-white */}
+                            <p className={`text-lg italic ${isStatusCondition ? 'text-white' : 'text-slate-500'}`}>
                                 {content.welcome.subtext}
                             </p>
                         </div>
 
                         {/* Scroll Indicator */}
-                        <div className={`absolute bottom-10 animate-bounce flex flex-col items-center gap-2 ${isStatusCondition ? 'text-amber-900' : 'text-slate-400'}`}>
+                        <div className={`absolute bottom-10 animate-bounce flex flex-col items-center gap-2 ${isStatusCondition ? 'text-[#D4AF37]' : 'text-slate-400'}`}>
                             <span className="text-xs uppercase tracking-widest">View Options</span>
                             <ArrowDownIcon className="w-6 h-6" />
                         </div>
@@ -142,20 +144,21 @@
                             {/* Option A: Single / Signature */}
                             <div className={`p-8 rounded-xl border-2 shadow-2xl flex flex-col relative overflow-hidden group transform hover:-translate-y-1 transition-all duration-300 ${
                                 isStatusCondition 
-                                ? 'bg-zinc-900 border-[#D4AF37] shadow-amber-900/20' 
+                                ? 'bg-zinc-900 border-[#D4AF37] shadow-[#D4AF37]/20' 
                                 : 'bg-white border-slate-900'
                             }`}>
                                 <div className={`absolute top-0 right-0 text-xs font-bold px-4 py-1.5 rounded-bl-lg tracking-widest ${
                                     isStatusCondition 
-                                    ? 'bg-amber-600 text-black' 
+                                    ? 'bg-[#D4AF37] text-black' 
                                     : 'bg-slate-900 text-white'
                                 }`}>
-                                    {isStatusCondition ? "CLASSIC" : "CLASSIC"}
+                                    {isStatusCondition ? "RESERVED" : "RECOMMENDED"}
                                 </div>
 
                                 <div className="mb-8 mt-2">
                                     <h3 className={`text-3xl font-serif font-medium mb-3 ${isStatusCondition ? 'text-[#F2E8C6]' : 'text-slate-900'}`}>{content.options.a.title}</h3>
-                                    <p className={`text-base leading-relaxed ${isStatusCondition ? 'text-[#E3D4A5]' : 'text-slate-600'}`}>
+                                    {/* 修正：这里改为白色 text-white */}
+                                    <p className={`text-base leading-relaxed ${isStatusCondition ? 'text-white' : 'text-slate-600'}`}>
                                         {content.options.a.desc}
                                     </p>
                                 </div>
@@ -174,8 +177,9 @@
                                                 {spec.icon}
                                                 {spec.label}
                                             </div>
+                                            {/* 修正：这里改为白色 text-white */}
                                             <div className={`text-lg font-semibold ${
-                                                isStatusCondition ? 'text-[#F2E8C6]' : 'text-slate-900'
+                                                isStatusCondition ? 'text-white' : 'text-slate-900'
                                             }`}>
                                                 {spec.value}
                                             </div>
@@ -187,7 +191,7 @@
                                     onClick={() => alert(`You chose: ${content.options.a.title}`)}
                                     className={`w-full py-5 font-medium rounded-none transition-colors flex items-center justify-center gap-3 text-lg ${
                                         isStatusCondition 
-                                        ? 'bg-amber-600 text-black hover:bg-[#CCA32A]' 
+                                        ? 'bg-[#D4AF37] text-black hover:bg-[#CCA32A]' 
                                         : 'bg-slate-900 text-white hover:bg-slate-800'
                                     }`}
                                 >
@@ -203,8 +207,10 @@
                                 : 'bg-white border-slate-200 shadow-sm hover:border-slate-300'
                             }`}>
                                 <div className="mb-8 mt-2">
-                                    <h3 className={`text-2xl font-medium mb-3 ${isStatusCondition ? 'text-zinc-400' : 'text-slate-700'}`}>{content.options.b.title}</h3>
-                                    <p className={`text-base leading-relaxed ${isStatusCondition ? 'text-zinc-500' : 'text-slate-500'}`}>
+                                    {/* 修正：这里改为白色 text-white */}
+                                    <h3 className={`text-2xl font-medium mb-3 ${isStatusCondition ? 'text-white' : 'text-slate-700'}`}>{content.options.b.title}</h3>
+                                    {/* 修正：这里改为白色 text-white */}
+                                    <p className={`text-base leading-relaxed ${isStatusCondition ? 'text-white' : 'text-slate-500'}`}>
                                         {content.options.b.desc}
                                     </p>
                                 </div>
@@ -213,13 +219,15 @@
                                 <div className="grid grid-cols-2 gap-y-6 gap-x-4 mb-8 p-6">
                                     {content.options.b.specs.map((spec, i) => (
                                         <div key={i} className="flex flex-col">
+                                            {/* 修正：标签改为亮灰 text-gray-300 */}
                                             <div className={`flex items-center gap-2 text-xs font-medium uppercase tracking-wider mb-1 ${
-                                                isStatusCondition ? 'text-zinc-600' : 'text-slate-400'
+                                                isStatusCondition ? 'text-gray-300' : 'text-slate-400'
                                             }`}>
                                                 {spec.icon}
                                                 {spec.label}
                                             </div>
-                                            <div className={`text-lg ${isStatusCondition ? 'text-zinc-500' : 'text-slate-600'}`}>
+                                            {/* 修正：数值改为白色 text-white */}
+                                            <div className={`text-lg ${isStatusCondition ? 'text-white' : 'text-slate-600'}`}>
                                                 {spec.value}
                                             </div>
                                         </div>
@@ -229,9 +237,10 @@
                                 <div className="mt-auto">
                                     <button 
                                         onClick={() => alert(`You chose to browse catalog`)}
+                                        // 修正：按钮改为纯白边框文字，Hover反色
                                         className={`w-full py-5 border-2 font-medium rounded-none transition-all flex items-center justify-center gap-3 text-lg ${
                                             isStatusCondition 
-                                            ? 'bg-transparent border-zinc-700 text-zinc-500 hover:border-amber-900/50 hover:text-[#D4AF37]' 
+                                            ? 'bg-transparent border-white text-white hover:bg-white hover:text-black' 
                                             : 'bg-white border-slate-200 text-slate-600 hover:border-slate-400 hover:text-slate-900'
                                         }`}
                                     >
