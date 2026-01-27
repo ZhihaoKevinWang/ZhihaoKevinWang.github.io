@@ -75,10 +75,10 @@
                             ? "The exclusive configuration reserved for distinguished guests. Pre-authorized for immediate activation." // Status framing
                             : "Our most popular recommended configuration. Balanced features for standard daily usage.", // Control framing
                         specs: [
-                            { label: "Data", value: "50 GB", icon: <DatabaseIcon className={`w-4 h-4 ${isStatusCondition ? 'text-amber-500' : ''}`}/> },
-                            { label: "Region", value: "50 Countries", icon: <GlobeIcon className={`w-4 h-4 ${isStatusCondition ? 'text-amber-500' : ''}`}/> },
-                            { label: "Price", value: "$20 / Month", icon: <DollarSignIcon className={`w-4 h-4 ${isStatusCondition ? 'text-amber-500' : ''}`}/> },
-                            { label: "Talk", value: "Unlimited", icon: <PhoneIcon className={`w-4 h-4 ${isStatusCondition ? 'text-amber-500' : ''}`}/> },
+                            { label: "Data", value: "50 GB", icon: <DatabaseIcon className={`w-4 h-4 ${isStatusCondition ? 'text-[#D4AF37]' : ''}`}/> },
+                            { label: "Region", value: "50 Countries", icon: <GlobeIcon className={`w-4 h-4 ${isStatusCondition ? 'text-[#D4AF37]' : ''}`}/> },
+                            { label: "Price", value: "$20 / Month", icon: <DollarSignIcon className={`w-4 h-4 ${isStatusCondition ? 'text-[#D4AF37]' : ''}`}/> },
+                            { label: "Talk", value: "Unlimited", icon: <PhoneIcon className={`w-4 h-4 ${isStatusCondition ? 'text-[#D4AF37]' : ''}`}/> },
                         ],
                         button: "Select Classic Plan"
                     },
@@ -101,7 +101,7 @@
                     
                     {/* Navigation Bar */}
                     <nav className={`py-5 px-8 flex justify-between items-center fixed w-full top-0 z-50 transition-colors duration-500 ${isStatusCondition ? 'bg-black/90 border-b border-zinc-800 backdrop-blur-md' : 'bg-white border-b border-slate-200'}`}>
-                        <div className={`flex items-center gap-2 font-bold text-xl tracking-tighter ${isStatusCondition ? 'text-amber-500' : 'text-slate-900'}`}>
+                        <div className={`flex items-center gap-2 font-bold text-xl tracking-tighter ${isStatusCondition ? 'text-[#D4AF37]' : 'text-slate-900'}`}>
                             <SignalIcon className="w-6 h-6" />
                             APEX MOBILE
                         </div>
@@ -114,7 +114,7 @@
                     <header className={`min-h-screen flex flex-col justify-center items-center px-6 pt-20 pb-10 text-center relative transition-colors duration-500 ${isStatusCondition ? 'bg-black' : 'bg-white'}`}>
                         <div className="max-w-3xl fade-in space-y-8">
                             
-                            <h1 className={`text-xl font-medium tracking-widest uppercase mb-4 ${isStatusCondition ? 'text-amber-600' : 'text-slate-400'}`}>
+                            <h1 className={`text-xl font-medium tracking-widest uppercase mb-4 ${isStatusCondition ? 'text-[#D4AF37]' : 'text-slate-400'}`}>
                                 {content.welcome.headline}
                             </h1>
 
@@ -142,7 +142,7 @@
                             {/* Option A: Single / Signature */}
                             <div className={`p-8 rounded-xl border-2 shadow-2xl flex flex-col relative overflow-hidden group transform hover:-translate-y-1 transition-all duration-300 ${
                                 isStatusCondition 
-                                ? 'bg-zinc-900 border-amber-600 shadow-amber-900/20' 
+                                ? 'bg-zinc-900 border-[#D4AF37] shadow-amber-900/20' 
                                 : 'bg-white border-slate-900'
                             }`}>
                                 <div className={`absolute top-0 right-0 text-xs font-bold px-4 py-1.5 rounded-bl-lg tracking-widest ${
@@ -150,7 +150,7 @@
                                     ? 'bg-amber-600 text-black' 
                                     : 'bg-slate-900 text-white'
                                 }`}>
-                                    {isStatusCondition ? "RESERVED" : "RECOMMENDED"}
+                                    {isStatusCondition ? "CLASSIC" : "CLASSIC"}
                                 </div>
 
                                 <div className="mb-8 mt-2">
@@ -169,7 +169,7 @@
                                     {content.options.a.specs.map((spec, i) => (
                                         <div key={i} className="flex flex-col">
                                             <div className={`flex items-center gap-2 text-xs font-bold uppercase tracking-wider mb-1 ${
-                                                isStatusCondition ? 'text-amber-600' : 'text-slate-400'
+                                                isStatusCondition ? 'text-[#D4AF37]' : 'text-slate-400'
                                             }`}>
                                                 {spec.icon}
                                                 {spec.label}
@@ -231,7 +231,7 @@
                                         onClick={() => alert(`You chose to browse catalog`)}
                                         className={`w-full py-5 border-2 font-medium rounded-none transition-all flex items-center justify-center gap-3 text-lg ${
                                             isStatusCondition 
-                                            ? 'bg-transparent border-zinc-700 text-zinc-500 hover:border-amber-900/50 hover:text-amber-500' 
+                                            ? 'bg-transparent border-zinc-700 text-zinc-500 hover:border-amber-900/50 hover:text-[#D4AF37]' 
                                             : 'bg-white border-slate-200 text-slate-600 hover:border-slate-400 hover:text-slate-900'
                                         }`}
                                     >
