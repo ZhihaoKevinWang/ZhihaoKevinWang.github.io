@@ -26,7 +26,6 @@
             --text-gray: #444;
             --bg-white: #ffffff;
             --bg-off-white: #f8f9fa;
-            --sidebar-width: 340px;
             --transition: all 0.3s ease;
         }
 
@@ -47,8 +46,6 @@
             background-color: var(--bg-white);
             font-weight: 400; 
             letter-spacing: -0.015em; 
-            display: flex;
-            flex-direction: column;
         }
 
         /* Typography */
@@ -71,32 +68,22 @@
         .hover\:underline:hover { text-decoration: underline; }
         .font-medium { font-weight: 500; }
 
-        /* --- Layout Structure --- */
-        
-        /* Sidebar (Base Styles) */
-        .sidebar {
-            background-color: var(--bg-off-white);
-            padding: 40px 30px;
-            border-right: 1px solid rgba(0,0,0,0.05);
+        /* --- Page Container (centers the whole page with margins on both sides) --- */
+        .page-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 48px;
+        }
+
+        /* --- Profile Column (used inside the intro row) --- */
+        .profile-column {
             display: flex;
             flex-direction: column;
-            align-items: center; 
+            align-items: center;
             text-align: center;
-            height: auto;
-            width: 100%;
-            z-index: 100;
-            overflow: hidden; /* Prevents scrollbar on sidebar */
+            flex-shrink: 0;
         }
 
-        /* Main Content Area */
-        .main-content {
-            flex: 1;
-            padding: 40px 24px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Profile Section */
         .profile-image-container {
             width: 240px; 
             height: 320px; 
@@ -129,57 +116,13 @@
             font-weight: 500;
         }
 
-        .cv-button {
-            display: inline-block;
-            padding: 10px 28px;
-            border: 1px solid var(--lbs-blue);
-            color: var(--lbs-blue);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            border-radius: 6px; 
-            margin-bottom: 32px;
-            background: transparent;
-        }
-
-        .cv-button:hover {
-            background-color: var(--lbs-blue);
-            color: white;
-            box-shadow: 0 4px 12px rgba(8, 30, 94, 0.15);
-        }
-
-        /* Navigation inside Sidebar */
-        .sidebar-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .sidebar-nav a {
-            font-size: 1rem;
-            color: var(--text-gray);
-            font-weight: 500;
-            padding: 8px 0;
-            position: relative;
-        }
-
-        .sidebar-nav a:hover, .sidebar-nav a.active {
-            color: var(--lbs-blue);
-            font-weight: 600;
-        }
-
-        /* Sidebar Socials */
+        /* Socials (kept under the photo block) */
         .sidebar-socials {
             display: flex;
             justify-content: center;
             gap: 24px;
-            margin-top: auto; 
             width: 100%;
-            padding-top: 15px;
+            padding-top: 8px;
         }
 
         .social-link-group {
@@ -242,6 +185,18 @@
             padding-bottom: 12px;
             border-bottom: 2px solid var(--lbs-blue-light);
             display: inline-block;
+        }
+
+        /* Intro Row: photo on the left, About Me on the right */
+        .intro-row {
+            display: flex;
+            gap: 56px;
+            align-items: flex-start;
+        }
+
+        .intro-row .about-column {
+            flex: 1;
+            min-width: 0; /* allow flex child to shrink properly */
         }
 
         /* Bio Text Styling */
@@ -387,121 +342,84 @@
             border-top: 1px solid #eee;
         }
 
-        /* Desktop Layout (Sidebar Fixed Left) */
-        @media (min-width: 900px) {
-            body {
-                flex-direction: row;
+        /* Responsive: stack the intro row on smaller screens */
+        @media (max-width: 820px) {
+            .page-container {
+                padding: 40px 24px;
             }
 
-            .sidebar {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: var(--sidebar-width);
-                height: 100vh;
-                align-items: flex-start;
-                text-align: left;
-                padding: 60px 40px 60px 40px; 
-                overflow: hidden; 
-            }
-            
-            .sidebar-socials {
-                position: relative; /* 从 absolute 改为 relative */
-                bottom: auto;
-                left: auto;
-                margin-top: 12px; 
-                padding-bottom: 0; 
-                background-color: transparent;
-                justify-content: center; 
-                /* 如果希望跟随文字左对齐，请改为 flex-start 并调整 padding */
-            }
-            
-            .main-content {
-                margin-left: var(--sidebar-width);
-                padding: 80px 60px;
-                max-width: 1100px;
+            .intro-row {
+                flex-direction: column;
+                gap: 32px;
+                align-items: center;
             }
 
-            .sidebar-nav {
-                align-items: flex-start;
+            .intro-row .about-column {
+                width: 100%;
             }
-        }
 
-        @media (max-width: 900px) {
-            .sidebar {
-                height: auto;
-                overflow: visible;
-            }
             .profile-image-container {
                 width: 200px;
                 height: 280px;
             }
         }
-        /* Corrected: Removed extra closing brace here */
-
     </style>
 </head>
 <body>
 
-    <!-- Sidebar (Basic Info) -->
-    <aside class="sidebar">
-        <div class="profile-image-container">
-            <!-- Ideally replace src with actual photo -->
-            <img src="IMG_1470.JPG" alt="Zhihao Wang" class="profile-image">
-        </div>
+    <div class="page-container">
 
-        <h1 class="sidebar-name">Zhihao Wang</h1>
-        <p class="sidebar-title">Ph.D. Student in Marketing<br>London Business School</p>
-        
-        <!-- <a href="#" class="cv-button">Download CV</a> -->
-
-        <nav class="sidebar-nav">
-            <a href="#intro">About Me</a>
-            <a href="#research">Research</a>
-            <a href="#timeline">Timeline</a>
-        </nav>
-
-        <div class="sidebar-socials">
-            <!-- Email -->
-            <a href="mailto:your-email@lbs.edu" class="social-link-group">
-                <div class="social-icon-circle">
-                    <i class="ri-mail-send-line ri-xl"></i>
-                </div>
-            </a>
-
-            <!-- Twitter (X) -->
-            <a href="https://x.com/zhihaokevin" target="_blank" class="social-link-group">
-                <div class="social-icon-circle">
-                    <i class="ri-twitter-x-line ri-xl"></i>
-                </div>
-            </a>
-
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/zhihaokevinwang" target="_blank" class="social-link-group">
-                <div class="social-icon-circle">
-                    <i class="ri-linkedin-line ri-xl"></i>
-                </div>
-            </a>
-        </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        
-        <!-- Introduction / Research Section -->
+        <!-- Intro Row: Photo + contact on the left, About Me on the right -->
         <section id="intro">
-            <h2 class="section-header">About Me</h2>
-            
-            <!-- User Provided Content -->
-            <div class="bio-text">
-                I am a first-year Ph.D. student in Marketing at <a href="https://www.london.edu/phd/profiles/zhihao-wang" class="text-primary hover:underline font-medium">London Business School</a>. I received a B.A. in Economics (with a minor in Data Science) and a B.S. in Psychology from <a href="https://yuanpei.pku.edu.cn"  class="text-peking hover:underline font-medium">Yuanpei College</a>, <a href="https://www.gsm.pku.edu.cn"  class="text-peking hover:underline font-medium">Guanghua School of Management</a>, and <a href="https://www.psy.pku.edu.cn"  class="text-peking hover:underline font-medium">School of Psychological and Cognitive Sciences</a> at <a href="https://https://www.pku.edu.cn"  class="text-peking hover:underline font-medium">Peking University</a> in 2025.
-                <br><br>
-                Wonderful mentors and their invaluable advice have enriched my undergraduate studies. I’m extremely fortunate to be advised by Professors <a href="https://cushmanlab.fas.harvard.edu/" class="text-primary hover:underline font-medium">Fiery Cushman</a>, <a href="http://www.phylissgai.com/" class="text-primary hover:underline font-medium">Phyliss Jia Gai</a>, and <a href="https://zhang.gsm.pku.edu.cn/" class="text-primary hover:underline font-medium">Ying Zhang</a>. Previously, I started my first research under the supervision of Professor <a href="http://lushazhu.com/" class="text-primary hover:underline font-medium">Lusha Zhu</a>.
-                <br><br>
-                My life is lighted by <a href="https://www.linkedin.com/in/oahzizddd/" class="text-primary hover:underline font-medium">Zizhao Dong</a>. All my best wishes for our future.
+            <div class="intro-row">
+                <!-- Profile Column (photo, name, title, socials) -->
+                <div class="profile-column">
+                    <div class="profile-image-container">
+                        <img src="IMG_1470.JPG" alt="Zhihao Wang" class="profile-image">
+                    </div>
+
+                    <h1 class="sidebar-name">Zhihao Wang</h1>
+                    <p class="sidebar-title">Ph.D. Student in Marketing<br>London Business School</p>
+
+                    <div class="sidebar-socials">
+                        <!-- Email -->
+                        <a href="mailto:your-email@lbs.edu" class="social-link-group">
+                            <div class="social-icon-circle">
+                                <i class="ri-mail-send-line ri-xl"></i>
+                            </div>
+                        </a>
+
+                        <!-- Twitter (X) -->
+                        <a href="https://x.com/zhihaokevin" target="_blank" class="social-link-group">
+                            <div class="social-icon-circle">
+                                <i class="ri-twitter-x-line ri-xl"></i>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/zhihaokevinwang" target="_blank" class="social-link-group">
+                            <div class="social-icon-circle">
+                                <i class="ri-linkedin-line ri-xl"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- About Me Column -->
+                <div class="about-column">
+                    <h2 class="section-header">About Me</h2>
+                    <div class="bio-text">
+                        I am a first-year Ph.D. student in Marketing at <a href="https://www.london.edu/phd/profiles/zhihao-wang" class="text-primary hover:underline font-medium">London Business School</a>. I received a B.A. in Economics (with a minor in Data Science) and a B.S. in Psychology from <a href="https://yuanpei.pku.edu.cn"  class="text-peking hover:underline font-medium">Yuanpei College</a>, <a href="https://www.gsm.pku.edu.cn"  class="text-peking hover:underline font-medium">Guanghua School of Management</a>, and <a href="https://www.psy.pku.edu.cn"  class="text-peking hover:underline font-medium">School of Psychological and Cognitive Sciences</a> at <a href="https://https://www.pku.edu.cn"  class="text-peking hover:underline font-medium">Peking University</a> in 2025.
+                        <br><br>
+                        Wonderful mentors and their invaluable advice have enriched my undergraduate studies. I’m extremely fortunate to be advised by Professors <a href="https://cushmanlab.fas.harvard.edu/" class="text-primary hover:underline font-medium">Fiery Cushman</a>, <a href="http://www.phylissgai.com/" class="text-primary hover:underline font-medium">Phyliss Jia Gai</a>, and <a href="https://zhang.gsm.pku.edu.cn/" class="text-primary hover:underline font-medium">Ying Zhang</a>. Previously, I started my first research under the supervision of Professor <a href="http://lushazhu.com/" class="text-primary hover:underline font-medium">Lusha Zhu</a>.
+                        <br><br>
+                        My life is lighted by <a href="https://www.linkedin.com/in/oahzizddd/" class="text-primary hover:underline font-medium">Zizhao Dong</a>. All my best wishes for our future.
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Research Section (full width) -->
         <section id="research">
             <h2 class="section-header">Research</h2>
             
@@ -529,7 +447,7 @@
             </div>
         </section>
 
-        <!-- Timeline Section -->
+        <!-- Timeline Section (full width) -->
         <section id="timeline">
             <h2 class="section-header">Timeline</h2>
             
@@ -618,7 +536,7 @@
             </footer>
         </section>
 
-    </main>
+    </div>
 
     <script>
         // 1. Intersection Observer for Animations (Timeline & Interests)
@@ -647,32 +565,6 @@
             // Add a slight delay based on index for "wave" effect
             item.style.transitionDelay = `${index * 100}ms`; 
             fadeObserver.observe(item);
-        });
-
-        // 2. Intersection Observer for Active Link Highlighting (Sidebar Nav)
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.sidebar-nav a');
-
-        const navObserverOptions = {
-            threshold: 0.3
-        };
-
-        const navObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, navObserverOptions);
-
-        sections.forEach(section => {
-            navObserver.observe(section);
         });
     </script>
 </body>
