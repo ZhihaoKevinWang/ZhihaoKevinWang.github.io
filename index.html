@@ -136,11 +136,11 @@
             margin: 0 0 26px;
         }
         .name-heading {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Playfair Display', serif;
             font-size: 2.85rem;
-            font-weight: 400;
+            font-weight: 700;
             line-height: 1.15;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             color: var(--lbs-blue);
             white-space: nowrap;
             margin: 0;
@@ -329,7 +329,7 @@
                     <div class="timeline-content"><h4>High School</h4><p>Beijing National Day School</p></div>
                 </div>
             </div>
-            <footer><p>© 2025 Zhihao Wang | Last updated: November 8, 2025</p></footer>
+            <footer><p>© 2026 Zhihao Wang | Last updated: November 14, 2026</p></footer>
         </section>
     </div>
 
@@ -343,7 +343,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry);
+                    observer.unobserve(entry.target);
                 }
             });
         }, fadeObserverOptions);
